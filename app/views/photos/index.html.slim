@@ -1,0 +1,14 @@
+== render "photos/form"
+
+br/
+.panel.panel-default 
+	.panel-heading 
+		h3.panel-title
+		   | Photos with keyword: "#{params[:keyword]}"
+	.panel-body
+		-if !@photos.blank?
+			== render "photos/list"
+		-else
+			h3.text-muted
+				| Total photos found: 0
+				

@@ -1,0 +1,30 @@
+#imageModal.modal.fade aria-labelledby="imageModalLabel" role="dialog" tabindex="-1" 
+  .modal-dialog role="document" 
+    .modal-content
+      .modal-header
+        button.close aria-label="Close" data-dismiss="modal" type="button" 
+          span aria-hidden="true"  &times;
+        h4#imageModalLabel.modal-title
+      .modal-body
+        img#imagepreview src="" style=("width: 100%; height:100%") /
+      .modal-footer
+        button.btn.btn-default data-dismiss="modal" type="button"  Close
+
+.row
+  .col-md-6
+    h3.text-muted 
+      | Total photos found: 
+      =@photos.total
+  .col-md-6
+    span.pull-right
+      =paginate @photos , :window => 2
+
+.row.photo-list
+  - @photos.each do |photo|
+    .col-md-3
+      .thumbnail
+        a alt="view"
+          =image_tag photo.url(:m), alt:  photo.title,  style: "height: 200px; width: 100%; display: block", "data-toggle" => "modal", "data-target" => "#imageModal"
+        .caption
+          b =truncate(photo.title,  length: 20)
+          p =truncate(photo.desc,  length: 50)

@@ -1,0 +1,2 @@
+key: ENV["FLICKR_KEY"]
+secret: ENV["FLICKR_SECRET"]

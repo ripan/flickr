@@ -1,0 +1,23 @@
+== README
+
+Environment
+
+- RUBYGEMS VERSION: 2.4.6
+- RUBY VERSION: 2.2.1 (2015-02-26 patchlevel 85) [x86_64-darwin14]
+- Rails 4.2.4
+
+
+Application URL
+- https://flickr-photos.herokuapp.com/
+
+Github URL
+- https://github.com/ripan/flickr.git
+
+Local Setup
+
+- git clone https://github.com/ripan/flickr.git
+- cd flickr
+- bundle
+- $ bundle exec figaro install
+- config/application.yml
+- Add FLICKR_KEY=XXX FLICKR_SECRET=XXX
